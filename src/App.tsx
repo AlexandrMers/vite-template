@@ -1,17 +1,16 @@
-import Component1 from './components/Component1'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+
+import Component1 from 'components/Component1'
+import Orders from 'components/Orders'
 
 function App() {
-  const calculate = () => {
-    console.log('hello')
-  }
-  calculate()
-
-  const a = 0
-  console.log('a', a)
   return (
-    <div className="App">
-      <Component1 />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Component1 />} />
+        <Route path="/orders" element={<Orders />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
